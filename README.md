@@ -15,7 +15,7 @@ The system supports restaurant management, menu management, order processing, pa
 - Docker & Docker Compose
 - Service Layer architecture
 - OpenAPI documentation
-
+ 
 ## Screenshots
 
 ### Swagger UI

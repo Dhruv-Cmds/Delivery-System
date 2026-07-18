@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: ${"DB_PASSWORD"}
 
     volumes:
-      -mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     
   redis:
     image: redis:7-alphine

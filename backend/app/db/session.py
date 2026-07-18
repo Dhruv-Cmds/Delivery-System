@@ -26,6 +26,14 @@ DB_HOST = os.getenv("DB_HOST", "mysql-shared")
 DB_PORT = os.getenv("DB_PORT", "3306")
 REDIS_HOST = os.getenv("REDIS_HOST", "redis-shared")
 
+
+if not all([DB_USER, DB_HOST, DB_NAME]):
+
+    raise ValueError(
+        "Missing database environment variables"
+    )
+
+
 DATABASE_URL = (
     f"mysql+aiomysql://"
     f"{DB_USER}:{DB_PASSWORD}"
@@ -48,5 +56,6 @@ AsyncSessionLocal = sessionmaker (
     bind=engine,
     class_=AsyncSession,
     expire_on_commit=False,
-    autoflush=False
+    autoflush=False,
+    autocommit=False
 )
