@@ -2,9 +2,8 @@ from sqlalchemy import select, update
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db.models import DeliveryPartner, User
+from app.db.models import DeliveryPartner
 
-from app.core import UserRole
 
 async def get_delivery_partner_user_id(
         db: AsyncSession,
